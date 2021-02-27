@@ -29,11 +29,72 @@ function askQuestions() {
                     type: 'input',
                     message: 'What is manager Name',
                     name: 'name'
+                },
+                {
+                    type: 'input',
+                    message: 'What is the managers ID number?',
+                    name: 'id'
+                },
+                {
+                    type: 'input',
+                    message: 'What is managers email?',
+                    name: 'email'
+                },
+                {
+                    type: 'input',
+                    message: 'What is managers phone number?',
+                    name: 'officeNumber'
                 }
             ])
         }
-        else if (answers.role === "Engineer") { }
-        else if (answers.role === "Intern") { }
+        else if (answers.role === "Engineer") { 
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    message: 'What is Engineers name?',
+                    name: 'name'
+                },
+                {
+                    type: 'input',
+                    message: 'What is the Engineers ID number?',
+                    name: 'id'
+                },
+                {
+                    type: 'input',
+                    message: 'What is Engineers email?',
+                    name: 'email'
+                },
+                {
+                    type: 'input',
+                    message: 'What is Engineers github username?',
+                    name: 'github'
+                }
+            ])
+        }
+        else if (answers.role === "Intern") { 
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    message: 'What is Intern Name',
+                    name: 'name'
+                },
+                {
+                    type: 'input',
+                    message: 'What is the Intern ID number?',
+                    name: 'id'
+                },
+                {
+                    type: 'input',
+                    message: 'What is the Intern email?',
+                    name: 'email'
+                },
+                {
+                    type: 'input',
+                    message: 'What is the Interns school name?',
+                    name: 'officeNumber'
+                }
+            ])
+        }
     })
 }
 
