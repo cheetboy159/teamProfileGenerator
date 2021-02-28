@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 const members = [];
@@ -60,7 +59,7 @@ function askQuestions() {
                 if(response.askForNewMember === true){
                     askQuestions();
                 }else{
-
+                    render();
                 }
             })
         }
@@ -99,7 +98,7 @@ function askQuestions() {
                 if (response.askForNewMember === true) {
                     askQuestions();
                 } else {
-
+                    render();
                 }
             })
         }
@@ -138,7 +137,7 @@ function askQuestions() {
                 if (response.askForNewMember === true) {
                     askQuestions();
                 } else {
-
+                    render();
                 }
             })
         }
@@ -148,7 +147,7 @@ function askQuestions() {
     })
 
 }
-function renderMembers(){
+function render(){
 fs.writeFileSync(outputPath, render(members), "utf-8");
 }
 askQuestions();
