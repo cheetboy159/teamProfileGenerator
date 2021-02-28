@@ -13,6 +13,8 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+const members = [];
+console.log(members);
 function askQuestions() {
     inquirer.prompt([
         {
@@ -45,7 +47,12 @@ function askQuestions() {
                     message: 'What is managers phone number?',
                     name: 'officeNumber'
                 }
-            ])
+            ]).then(response => {
+                console.log(response);
+                const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
+                members.push(manager);
+
+            })
         }
         else if (answers.role === "Engineer") { 
             inquirer.prompt([
@@ -69,7 +76,11 @@ function askQuestions() {
                     message: 'What is Engineers github username?',
                     name: 'github'
                 }
-            ])
+            ]).then(response =>{
+                console.log(response);
+                const engineer = new Engineer(response.name, response.id, response.email, response.github);
+                members.push(engineer);
+            })
         }
         else if (answers.role === "Intern") { 
             inquirer.prompt([
@@ -91,9 +102,13 @@ function askQuestions() {
                 {
                     type: 'input',
                     message: 'What is the Interns school name?',
-                    name: 'officeNumber'
+                    name: 'school'
                 }
-            ])
+            ]).then(response=>{
+                console.log(response);
+                const intern = new Intern(response.name, response.id, response.email, response.school);
+                members.push(intern);
+            })
         }
     })
 }
