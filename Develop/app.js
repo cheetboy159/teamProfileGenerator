@@ -59,7 +59,7 @@ function askQuestions() {
                 if(response.askForNewMember === true){
                     askQuestions();
                 }else{
-                    render();
+                    renderMembers();
                 }
             })
         }
@@ -98,7 +98,7 @@ function askQuestions() {
                 if (response.askForNewMember === true) {
                     askQuestions();
                 } else {
-                    render();
+                    renderMembers();
                 }
             })
         }
@@ -137,23 +137,20 @@ function askQuestions() {
                 if (response.askForNewMember === true) {
                     askQuestions();
                 } else {
-                    render();
+                    renderMembers();
                 }
             })
         }
-    }).then(response =>{
-        console.log(response);
-        renderMembers();
     })
-
+ 
 }
-function render(){
-fs.writeFileSync(outputPath, render(members), "utf-8");
-}
-askQuestions();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+function renderMembers(){
+fs.writeFileSync(outputPath, render(members), "utf-8");
+}
+askQuestions();
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
