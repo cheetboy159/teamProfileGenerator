@@ -20,7 +20,7 @@ In the terminal, type "node app" and answer all the prompts untill all the data 
 ## Instructions
 follow the steps shown in the GIF bellow
 
-![](./assets/teamGenerator.gif)
+![](assets/teamGenerator.gif)
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
